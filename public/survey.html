@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<head>
+  <meta charset = UTF-8>
+  <title>Friend Finder</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<body>
+  <div class='modal fade' id='friendModal' tabindex='-1' role='dialog' aria-labelledby="friendModal" aria-hidden="true">
+    <div class='modal-dialog' role='document'>
+      <div class='modal-content'>
+        <div class='modal-header'>
+          <h2 class='modal-title'>Your best match!</h2>
+          <button type='button' class='close' data-dismiss='modal' aria-label='close'>
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class='modal-body'>
+          <p id='bestMatch'></p>
+          <img id='bestPhoto' src="" alt='matchPhoto'>
+        </div>
+        <div class='modal-footer'>
+          <button type='button' class='btn btn-secondary' data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+    <h2>Survey Questions!</h2>
+    <br>
+    <h3>About you!</h3>
+    <br>
+    <div class='form-group'>
+      <h3>Name</h3>
+      <input type='text' id='userName' placeholder='Your name'>
+    </div>
+    <div class='form-group'>
+      <h3>Upload a pic!</h3>
+      <input type='file' class='form-control-file' id='userPic'>
+    </div>
+  </div>
+  <hr>
+  <h3>
+    <strong>Question 1</strong>
+  </h3>
+  <h4>You often don't know what to say in groups</h4>
+  <select class="select" id='q1'>
+    <option value=''>Agree or disagree?</option>
+    <option value='1'>1 (Strongly Disagree)</option>
+    <option value='2'>2</option>
+    <option value='3'>3</option>
+    <option value='4'>4</option>
+    <option value='5'> 5 (Strongly Agree)</option>
+    
+  </select>
+  <br>
+  <h3>
+    <strong>Question 2</strong>
+  </h3>
+  <h4>You spend a lot of time thinking about the future</h4>
+  <select class="select" id='q2'>
+    <option value=''>Agree or disagree?</option>
+    <option value='1'>1 (Strongly Disagree)</option>
+    <option value='2'>2</option>
+    <option value='3'>3</option>
+    <option value='4'>4</option>
+    <option value='5'> 5 (Strongly Agree)</option>
+    
+  </select>
+  <br>
+  <h3>
+    <strong>Question 3</strong>
+  </h3>
+  <h4>You feel best when surrounded by friends</h4>
+  <select class="select" id='q3'>
+    <option value=''>Agree or disagree?</option>
+    <option value='1'>1 (Strongly Disagree)</option>
+    <option value='2'>2</option>
+    <option value='3'>3</option>
+    <option value='4'>4</option>
+    <option value='5'> 5 (Strongly Agree)</option>
+    
+  </select>
+  <br>
+  <h3>
+    <strong>Question 4</strong>
+  </h3>
+  <h4>You have an easy time talking with new people</h4>
+  <select class="select" id='q4'>
+    <option value=''>Agree or disagree?</option>
+    <option value='1'>1 (Strongly Disagree)</option>
+    <option value='2'>2</option>
+    <option value='3'>3</option>
+    <option value='4'>4</option>
+    <option value='5'> 5 (Strongly Agree)</option>
+    
+  </select>
+  <br>
+  <h3>
+    <strong>Question 5</strong>
+  </h3>
+  <h4>You're not worried about the future</h4>
+  <select class="select" id='q5'>
+    <option value=''>Agree or disagree?</option>
+    <option value='1'>1 (Strongly Disagree)</option>
+    <option value='2'>2</option>
+    <option value='3'>3</option>
+    <option value='4'>4</option>
+    <option value='5'> 5 (Strongly Agree)</option>
+    
+  </select>
+  <br>
+  <h3>
+    <strong>Question 6</strong>
+  </h3>
+  <h4>It's uncommon for you to feel lonely</h4>
+  <select class="select" id='q6'>
+    <option value=''>Agree or disagree?</option>
+    <option value='1'>1 (Strongly Disagree)</option>
+    <option value='2'>2</option>
+    <option value='3'>3</option>
+    <option value='4'>4</option>
+    <option value='5'> 5 (Strongly Agree)</option>
+    
+  </select>
+  <br>
+  <h3>
+    <strong>Question 7</strong>
+  </h3>
+  <h4>You feel that a strong friendship is the basis to a happy relationship</h4>
+  <select class="select" id='q7'>
+    <option value=''>Agree or disagree?</option>
+    <option value='1'>1 (Strongly Disagree)</option>
+    <option value='2'>2</option>
+    <option value='3'>3</option>
+    <option value='4'>4</option>
+    <option value='5'> 5 (Strongly Agree)</option>
+    
+  </select>
+  <br>
+  <h3>
+    <strong>Question 8</strong>
+  </h3>
+  <h4>You pick your friends carefully</h4>
+  <select class="select" id='q8'>
+    <option value=''>Agree or disagree?</option>
+    <option value='1'>1 (Strongly Disagree)</option>
+    <option value='2'>2</option>
+    <option value='3'>3</option>
+    <option value='4'>4</option>
+    <option value='5'> 5 (Strongly Agree)</option>
+    
+  </select>
+  <br>
+  <h3>
+    <strong>Question 9</strong>
+  </h3>
+  <h4>You're ready to go once the day starts.</h4>
+  <select class="select" id='q9'>
+    <option value=''>Agree or disagree?</option>
+    <option value='1'>1 (Strongly Disagree)</option>
+    <option value='2'>2</option>
+    <option value='3'>3</option>
+    <option value='4'>4</option>
+    <option value='5'> 5 (Strongly Agree)</option>
+    
+  </select>
+  <br>
+  <h3>
+    <strong>Question 10</strong>
+  </h3>
+  <h4>If food falls on the ground then the first one to get to it gets to eat it.</h4>
+  <select class="select" id='q10'>
+    <option value=''>Agree or disagree?</option>
+    <option value='1'>1 (Strongly Disagree)</option>
+    <option value='2'>2</option>
+    <option value='3'>3</option>
+    <option value='4'>4</option>
+    <option value='5'> 5 (Strongly Agree)</option>
+    
+  </select>
+
+  <br>
+  <br>
+  <button type='submit' id='submit'>Submit answers!</button>
+  <hr>
+  <footer>
+    <div class="container">
+      <a href="/api/friends">Friend list</a>
+    </div>
+
+  </footer>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script type='text/javascript'>
+  $('#submit').on('click', function(event){
+    event.preventDefault(); 
+  }); 
+
+  function validateAnswers() {
+    var valid = true; 
+    $('#username').each(function (){
+      if ($(this).val()===''){
+        valid = false; 
+      }
+     
+    }); 
+
+    $('.select').each(function () {
+      if ($(this).val() === '') {
+        valid = false; 
+      }
+    }); 
+
+    return validateAnswers; 
+
+
+
+  }
+
+  if (validateAnswers()) {
+
+    var userData = {
+    name: $('#userName').val(), 
+    photo: $('#userPic').val(), 
+    scores: [
+            $("#q1").val(),
+            $("#q2").val(),
+            $("#q3").val(),
+            $("#q4").val(),
+            $("#q5").val(),
+            $("#q6").val(),
+            $("#q7").val(),
+            $("#q8").val(),
+            $("#q9").val(),
+            $("#q10").val()
+    ]
+  }
+
+  }
+
+  
+</script>
+</body>
